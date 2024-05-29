@@ -503,7 +503,7 @@ def machine(code_file, input_file, debug_file = None):
             print("Reading code error")
             exit(1)
     if debug_file is not None:
-        logging.basicConfig(filename=debug_file, filemode="w", format="%(levelname)s   %(name): %(message)s")
+        logging.basicConfig(filename=debug_file, filemode="w")
     code = read_code(code_file)
     input_token = []
     with open(input_file, encoding="utf-8") as file:
@@ -521,9 +521,6 @@ def machine(code_file, input_file, debug_file = None):
 
     print("".join(output))
     print("instr_counter: ", instr_counter, "ticks:", ticks)
-
-
-
 
 
 
