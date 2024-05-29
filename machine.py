@@ -64,7 +64,6 @@ class magic_numbers:
 class DataPath:
     """
 
-     ```
      ! Каждый MUX имеет селектор, но ради упрощения схемы они не отображены
 
                          ^                  |
@@ -102,7 +101,6 @@ class DataPath:
     |  data                                             |
     |  memory                                           |
     +---------------------------------------------------+
-    ```
 
     - data_memory -- однопортовая, поэтому либо читаем, либо пишем.
 
@@ -273,13 +271,13 @@ class DataPath:
 
 
 class ControlUnit:
-    """Блок управления процессора. Выполняет декодирование инструкций и
+    """
+    Блок управления процессора. Выполняет декодирование инструкций и
     управляет состоянием модели процессора, включая обработку данных (DataPath).
 
     Согласно варианту, любая инструкция может быть закодирована в одно слово.
     Следовательно, индекс памяти команд эквивалентен номеру инструкции.
 
-    ```text
 
       +----------------------- +1 -----------+             +---------------------------+
       |                                      |             |                           |
@@ -316,7 +314,6 @@ class ControlUnit:
       |                                                  +-----------------+
       |                                                           |
       +-------------------------- data ---------------------------+
-    ```
 
     """
 
@@ -358,9 +355,7 @@ class ControlUnit:
                 )
                 self.tick(3)
                 self.data_path.signal_oe()
-                self.data_path.signal_latch_ac(
-                    magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ac(magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"})
             elif data["F"] == 2:  # LD [SP+5]
                 self.data_path.signal_latch_ar(
                     magic_numbers.MUX_L_0,
@@ -368,13 +363,9 @@ class ControlUnit:
                     {"op": "ADD", "PR": data["V"]},
                 )
                 self.tick(4)
-                self.data_path.signal_latch_ar(
-                    magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ar(magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"})
                 self.data_path.signal_oe()
-                self.data_path.signal_latch_ac(
-                    magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ac(magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"})
             elif data["F"] == 3:  # LD [[SP+5]]
                 self.data_path.signal_latch_ar(
                     magic_numbers.MUX_L_0,
@@ -382,17 +373,11 @@ class ControlUnit:
                     {"op": "ADD", "PR": data["V"]},
                 )
                 self.tick(6)
-                self.data_path.signal_latch_ar(
-                    magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ar(magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"})
                 self.data_path.signal_oe()
-                self.data_path.signal_latch_ar(
-                    magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ar(magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"})
                 self.data_path.signal_oe()
-                self.data_path.signal_latch_ac(
-                    magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ac(magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"})
             else:
                 raise "E338"
         elif instr == "ST":
@@ -403,9 +388,7 @@ class ControlUnit:
                     {"op": "ADD", "PR": data["V"]},
                 )
                 self.tick(2)
-                self.data_path.signal_wr(
-                    magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"}
-                )
+                self.data_path.signal_wr(magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"})
             elif data["F"] == 1:  # ST [5]
                 self.data_path.signal_latch_ar(
                     magic_numbers.MUX_L_0,
@@ -414,12 +397,8 @@ class ControlUnit:
                 )
                 self.tick(4)
                 self.data_path.signal_oe()
-                self.data_path.signal_latch_ar(
-                    magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"}
-                )
-                self.data_path.signal_wr(
-                    magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ar(magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"})
+                self.data_path.signal_wr(magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"})
             elif data["F"] == 2:  # ST SP+5
                 self.data_path.signal_latch_ar(
                     magic_numbers.MUX_L_0,
@@ -427,12 +406,8 @@ class ControlUnit:
                     {"op": "ADD", "PR": data["V"]},
                 )
                 self.tick(3)
-                self.data_path.signal_latch_ar(
-                    magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"}
-                )
-                self.data_path.signal_wr(
-                    magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ar(magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"})
+                self.data_path.signal_wr(magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"})
             elif data["F"] == 3:  # ST [SP+5]
                 self.data_path.signal_latch_ar(
                     magic_numbers.MUX_L_0,
@@ -440,16 +415,10 @@ class ControlUnit:
                     {"op": "ADD", "PR": data["V"]},
                 )
                 self.tick(5)
-                self.data_path.signal_latch_ar(
-                    magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ar(magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"})
                 self.data_path.signal_oe()
-                self.data_path.signal_latch_ar(
-                    magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"}
-                )
-                self.data_path.signal_wr(
-                    magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ar(magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"})
+                self.data_path.signal_wr(magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"})
             else:
                 raise "E338"
         elif instr in ("ADD", "SUB", "MUL", "DIV", "MOD", "CMP"):
@@ -482,9 +451,7 @@ class ControlUnit:
                     {"op": "ADD", "PR": data["V"]},
                 )
                 self.tick(4)
-                self.data_path.signal_latch_ar(
-                    magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"}
-                )
+                self.data_path.signal_latch_ar(magic_numbers.MUX_L_AR, magic_numbers.MUX_R_SP, {"op": "ADD"})
                 self.data_path.signal_oe()
                 self.data_path.signal_latch_ac(
                     magic_numbers.MUX_L_AC,
@@ -527,9 +494,7 @@ class ControlUnit:
         elif instr == "CALL":
             self.data_path.signal_latch_sp(magic_numbers.MUX_S_DEC)
             self.tick(4)
-            self.data_path.signal_latch_ar(
-                magic_numbers.MUX_L_0, magic_numbers.MUX_R_SP, {"op": "ADD"}
-            )
+            self.data_path.signal_latch_ar(magic_numbers.MUX_L_0, magic_numbers.MUX_R_SP, {"op": "ADD"})
             self.data_path.signal_wr(
                 magic_numbers.MUX_L_0,
                 magic_numbers.MUX_R_PR,
@@ -541,34 +506,22 @@ class ControlUnit:
                 {"op": "ADD", "PR": data["V"]},
             )
         elif instr == "RET":
-            self.data_path.signal_latch_ar(
-                magic_numbers.MUX_L_0, magic_numbers.MUX_R_SP, {"op": "ADD"}
-            )
+            self.data_path.signal_latch_ar(magic_numbers.MUX_L_0, magic_numbers.MUX_R_SP, {"op": "ADD"})
             self.tick(4)
             self.data_path.signal_oe()
-            self.IP = self.data_path.alu(
-                magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"}
-            )
+            self.IP = self.data_path.alu(magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"})
             self.data_path.signal_latch_sp(magic_numbers.MUX_S_INC)
         elif instr == "PUSH":
             self.data_path.signal_latch_sp(magic_numbers.MUX_S_DEC)
             self.tick(4)
-            self.data_path.signal_latch_ar(
-                magic_numbers.MUX_L_0, magic_numbers.MUX_R_SP, {"op": "ADD"}
-            )
-            self.data_path.signal_wr(
-                magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"}
-            )
+            self.data_path.signal_latch_ar(magic_numbers.MUX_L_0, magic_numbers.MUX_R_SP, {"op": "ADD"})
+            self.data_path.signal_wr(magic_numbers.MUX_L_AC, magic_numbers.MUX_R_0, {"op": "ADD"})
             # self.IP = self.data_path.alu(magic_numbers.MUX_L_0, magic_numbers.MUX_R_PR, {"op":"ADD", "PR": data["V"]})
         elif instr == "POP":
-            self.data_path.signal_latch_ar(
-                magic_numbers.MUX_L_0, magic_numbers.MUX_R_SP, {"op": "ADD"}
-            )
+            self.data_path.signal_latch_ar(magic_numbers.MUX_L_0, magic_numbers.MUX_R_SP, {"op": "ADD"})
             self.tick(4)
             self.data_path.signal_oe()
-            self.data_path.signal_latch_ac(
-                magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"}
-            )
+            self.data_path.signal_latch_ac(magic_numbers.MUX_L_0, magic_numbers.MUX_R_DR, {"op": "ADD"})
             self.data_path.signal_latch_sp(magic_numbers.MUX_S_INC)
         elif instr == "IN":
             self.data_path.signal_latch_ac(None, None, None, magic_numbers.MUX_A_INP)
@@ -590,9 +543,7 @@ class ControlUnit:
         return None
 
     def decode_and_execute_instruction(self):
-        assert 0 <= self.IP and self.IP < len(
-            self.programm
-        ), "Unexpected end of the program"
+        assert 0 <= self.IP and self.IP < len(self.programm), "Unexpected end of the program"
         instr = self.programm[self.IP].copy()
         self.IP += 1
         self.tick()
@@ -653,9 +604,7 @@ def machine(code_file, input_file, debug_file=None):
             exit(1)
 
     if debug_file is not None:
-        logging.basicConfig(
-            filename=debug_file, filemode="w", level=logging.DEBUG, force=True
-        )
+        logging.basicConfig(filename=debug_file, filemode="w", level=logging.DEBUG, force=True)
     code = read_code(code_file)
     input_token = []
     with open(input_file, encoding="utf-8") as file:
@@ -664,9 +613,7 @@ def machine(code_file, input_file, debug_file=None):
             input_token.append(ord(char))
         input_token.append(0)
 
-    output, instr_counter, ticks = simulation(
-        code, input_tokens=input_token, data_memory_size=1000, limit=1500
-    )
+    output, instr_counter, ticks = simulation(code, input_tokens=input_token, data_memory_size=1000, limit=1500)
 
     print("".join(output))
     print("instr_counter: ", instr_counter, "ticks:", ticks)

@@ -85,9 +85,7 @@ def translate(tokens: list[str], ast: AST) -> str:
         else:
             scope[name] = (type, lable)
 
-    def set_varible(
-        name: str, scope: dict[str, (str, int)], is_array=False
-    ) -> list[str]:
+    def set_varible(name: str, scope: dict[str, (str, int)], is_array=False) -> list[str]:
         return (
             [
                 {"instruction": "LD", "operand": "SP+0"},
@@ -100,9 +98,7 @@ def translate(tokens: list[str], ast: AST) -> str:
             ]
         )
 
-    def compile_str(
-        name: str, scope: dict[str, (str, int)]
-    ) -> list[str]:  # string, varible, number
+    def compile_str(name: str, scope: dict[str, (str, int)]) -> list[str]:  # string, varible, number
         if t_is(name, "variable"):
             if name not in scope:
                 print(name + " is undefined")
@@ -129,9 +125,7 @@ def translate(tokens: list[str], ast: AST) -> str:
 
     def compile(ast: AST, scope: dict[str, (str, int)]):
         t_assert(len(ast.args) != 0, "Empty parentheses", ast)
-        if isinstance(ast.args[0], AST) or t_is(
-            ast.args[0], "string"
-        ):  # ((code) (code) (code) ...)
+        if isinstance(ast.args[0], AST) or t_is(ast.args[0], "string"):  # ((code) (code) (code) ...)
             for arg in ast.args[:-1]:
                 if isinstance(arg, AST):
                     compile(arg, scope)
@@ -168,9 +162,7 @@ def translate(tokens: list[str], ast: AST) -> str:
         elif ast.args[0] == "compile-malloc":
             t_assert(len(ast.args) == 2, ast.args[0] + " expects 1 arguments", ast)
             t_assert(
-                not isinstance(ast.args[1], AST)
-                and t_is(ast.args[1], "number")
-                and int(ast.args[1]) > 0,
+                not isinstance(ast.args[1], AST) and t_is(ast.args[1], "number") and int(ast.args[1]) > 0,
                 ast.args[0] + " expects a number as the first argument",
                 ast,
             )
@@ -197,9 +189,7 @@ def translate(tokens: list[str], ast: AST) -> str:
                     ]
                 )
             else:
-                ast.code.extend(
-                    [{"instruction": "LD", "operand": "SP+0"}, {"instruction": "OUT"}]
-                )
+                ast.code.extend([{"instruction": "LD", "operand": "SP+0"}, {"instruction": "OUT"}])
         elif ast.args[0] in ("=", ">=", "!=", "+", "-", "*", "/", "%"):
             t_assert(len(ast.args) == 3, ast.args[0] + " expects 2 arguments", ast)
             for arg in ast.args[1:]:
@@ -221,9 +211,7 @@ def translate(tokens: list[str], ast: AST) -> str:
                 ast.code.append({"instruction": "LD", "operand": "SP+1"})
                 ast.code.append(
                     {
-                        "instruction": (
-                            {"-": "SUB", "/": "DIV", "%": "MOD"}[ast.args[0]]
-                        ),
+                        "instruction": ({"-": "SUB", "/": "DIV", "%": "MOD"}[ast.args[0]]),
                         "operand": "[SP+0]",
                     }
                 )
@@ -236,18 +224,14 @@ def translate(tokens: list[str], ast: AST) -> str:
                 ast.code.append({"instruction": "CMP", "operand": "[SP+0]"})
                 ast.code.append(
                     {
-                        "instruction": (
-                            {"=": "JE", "!=": "JNE", ">=": "JGE"}[ast.args[0]]
-                        ),
+                        "instruction": ({"=": "JE", "!=": "JNE", ">=": "JGE"}[ast.args[0]]),
                         "V": lable1,
                     }
                 )
                 ast.code.append({"instruction": "LD", "operand": "0"})
                 ast.code.append({"instruction": "JMP", "V": lable2})
                 ast.code.append({"instruction": "LD", "operand": "1", "lable": lable1})
-                ast.code.append(
-                    {"instruction": "ST", "operand": "SP+1", "lable": lable2}
-                )
+                ast.code.append({"instruction": "ST", "operand": "SP+1", "lable": lable2})
                 ast.code.append({"instruction": "POP"})
         elif ast.args[0] == "defun":
             lable1 = rnd_lable()
@@ -264,21 +248,14 @@ def translate(tokens: list[str], ast: AST) -> str:
             )
             t_assert(
                 isinstance(ast.args[2], AST)
-                and all(
-                    [
-                        not isinstance(arg, AST) and t_is(arg, "variable")
-                        for arg in ast.args[2].args
-                    ]
-                ),
+                and all([not isinstance(arg, AST) and t_is(arg, "variable") for arg in ast.args[2].args]),
                 "defun expects a arguments as the second argument",
                 ast,
             )
             t_assert(len(ast.args[2].args) > 0, "Еxpects one or more arguments", ast)
             fscope = dict(filter(lambda x: x[1][0] != "arg_variable", scope.items()))
             t_define(ast.args[1], "function", scope, ast.token_nuber)
-            ast.code.append(
-                {"instruction": "NOP", "lable": "lable_f" + str(ast.token_nuber)}
-            )
+            ast.code.append({"instruction": "NOP", "lable": "lable_f" + str(ast.token_nuber)})
             for i in range(len(ast.args[2].args)):
                 t_define(ast.args[2].args[i], "variable", fscope)
                 ast.code.append(
@@ -304,9 +281,7 @@ def translate(tokens: list[str], ast: AST) -> str:
             else:
                 ast.code.extend(compile_str(ast.args[-1], fscope))
             ast.code.append({"instruction": "POP"})
-            ast.code.append(
-                {"instruction": "ST", "operand": "SP+" + str(len(ast.args[2].args))}
-            )
+            ast.code.append({"instruction": "ST", "operand": "SP+" + str(len(ast.args[2].args))})
             ast.code.append({"instruction": "RET"})
             ast.code.append({"instruction": "LD", "operand": "1", "lable": lable1})
             ast.code.append({"instruction": "PUSH"})
@@ -365,9 +340,7 @@ def translate(tokens: list[str], ast: AST) -> str:
                     ast.code.extend(arg.code)
                 else:
                     ast.code.extend(compile_str(arg, scope))
-            ast.code.append(
-                {"instruction": "CALL", "V": "lable_f" + str(scope[ast.args[0]][1])}
-            )
+            ast.code.append({"instruction": "CALL", "V": "lable_f" + str(scope[ast.args[0]][1])})
             for i in range(len(ast.args[1:]) - 1):
                 ast.code.append({"instruction": "POP"})
 
@@ -421,8 +394,6 @@ def translate_code(source, target):
 
 
 if __name__ == "__main__":
-    assert (
-        len(sys.argv) == 3
-    ), "Wrong arguments: translator.py <input_file> <target_file>"
+    assert len(sys.argv) == 3, "Wrong arguments: translator.py <input_file> <target_file>"
     _, source, target = sys.argv
     translate_code(source, target)
