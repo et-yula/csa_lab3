@@ -1065,6 +1065,8 @@ out_dbg: |
   INFO:root:output_buffer: '23'
   
 out_stdout: |
+  source LoC: 35 code instr: 285
+  ============================================================
   23
   instr_counter:  1024 ticks: 4019
   

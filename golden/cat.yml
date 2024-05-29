@@ -115,6 +115,8 @@ out_dbg: |
   INFO:root:output_buffer: 'Alice'
   
 out_stdout: |
+  source LoC: 7 code instr: 26
+  ============================================================
   Alice
   instr_counter:  102 ticks: 371
   

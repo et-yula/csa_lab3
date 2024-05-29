@@ -1511,6 +1511,8 @@ out_dbg: |
   INFO:root:output_buffer: 'What is your name?\nHello, Alice!'
   
 out_stdout: |
+  source LoC: 25 code instr: 138
+  ============================================================
   What is your name?
   Hello, Alice!
   instr_counter:  1480 ticks: 5909

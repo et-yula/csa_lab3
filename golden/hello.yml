@@ -435,6 +435,8 @@ out_dbg: |
   INFO:root:output_buffer: 'Hello world'
   
 out_stdout: |
+  source LoC: 8 code instr: 58
+  ============================================================
   Hello world
   instr_counter:  421 ticks: 1686
   
