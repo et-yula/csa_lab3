@@ -9,7 +9,7 @@ in_source: |-
   (print "Hello world")
 in_stdin: |-
   -
-out_dbg: |-
+out_dbg: |
   DEBUG:root:TICK:    0 ACC:      0 SP:      0 IP:      0 INSTR: {'instruction': 'JMP', 'V': 50}
   DEBUG:root:TICK:    2 ACC:      0 SP:      0 IP:     50 INSTR: {'instruction': 'LD', 'operand': '1'}
   DEBUG:root:TICK:    4 ACC:      1 SP:      0 IP:     51 INSTR: {'instruction': 'PUSH'}

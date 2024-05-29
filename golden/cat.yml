@@ -8,7 +8,7 @@ in_source: |-
   )
 in_stdin: |-
   Alice
-out_dbg: |-
+out_dbg: |
   DEBUG:root:TICK:    0 ACC:      0 SP:      0 IP:      0 INSTR: {'instruction': 'IN'}
   DEBUG:root:TICK:    2 ACC:     65 SP:      0 IP:      1 INSTR: {'instruction': 'PUSH'}
   DEBUG:root:TICK:    7 ACC:     65 SP:     -1 IP:      2 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
