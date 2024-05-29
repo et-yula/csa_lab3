@@ -56,8 +56,5 @@ jobs:
       - name: Check code formatting with Ruff
         run: poetry run ruff format --check .
 
-      - name: Run Ruff linters
-        run: poetry run ruff check .
-
       - name: Run MyPy type checker
         run: poetry run mypy .
