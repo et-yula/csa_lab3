@@ -467,7 +467,7 @@ class ControlUnit:
 
 def simulation(code, input_tokens, data_memory_size, limit, debug_file = None):
     if debug_file is not None:
-        logging.basicConfig(filename=debug_file, filemode="w", format="%(levelname)s   %(name): %(message)s"
+        logging.basicConfig(filename=debug_file, filemode="w", format="%(levelname)s   %(name): %(message)s")
     mm = MemoryManager(data_memory_size)
     if len(code)>0 and isinstance(code[0], list):
         for i in range(len(code[0])):
