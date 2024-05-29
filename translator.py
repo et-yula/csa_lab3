@@ -282,7 +282,7 @@ def write_code(file_path, code):
     with open(file_path, 'w') as file:
         json.dump(code, file)
 
-def translate(source, target):
+def translate_code(source, target):
     with open(source, encoding="utf-8") as f:
         source = f.read()
     
@@ -297,4 +297,4 @@ def translate(source, target):
 if __name__ == "__main__":
     assert len(sys.argv) == 3, "Wrong arguments: translator.py <input_file> <target_file>"
     _, source, target = sys.argv
-    translate(source, target)
+    translate_code(source, target)

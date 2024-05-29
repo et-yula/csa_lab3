@@ -61,7 +61,7 @@ def test_translator_and_machine(golden):
         # Запускаем транслятор и симулятор и собираем весь
         # стандартный вывод в переменную stdout
         with contextlib.redirect_stdout(io.StringIO()) as stdout:
-            translator.translate(source_name, target_name)
+            translator.translate_code(source_name, target_name)
             print("============================================================")
             machine.machine(target_name, input_name, debug_name)
 
