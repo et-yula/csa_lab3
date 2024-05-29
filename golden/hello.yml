@@ -10,6 +10,428 @@ in_source: |-
 in_stdin: |-
   -
 out_dbg: |-
-  TODO
+  DEBUG:root:TICK:    0 ACC:      0 SP:      0 IP:      0 INSTR: {'instruction': 'JMP', 'V': 50}
+  DEBUG:root:TICK:    2 ACC:      0 SP:      0 IP:     50 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:    4 ACC:      1 SP:      0 IP:     51 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:    9 ACC:      1 SP:     -1 IP:     52 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:   14 ACC:      1 SP:      0 IP:     53 INSTR: {'instruction': 'LD', 'operand': '2'}
+  DEBUG:root:TICK:   16 ACC:      2 SP:      0 IP:     54 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:   21 ACC:      2 SP:     -1 IP:     55 INSTR: {'instruction': 'CALL', 'V': 1}
+  DEBUG:root:TICK:   26 ACC:      2 SP:     -2 IP:      1 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK:   27 ACC:      2 SP:     -2 IP:      2 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK:   32 ACC:      2 SP:     -2 IP:      3 INSTR: {'instruction': 'ST', 'operand': '0'}
+  DEBUG:root:TICK:   35 ACC:      2 SP:     -2 IP:      4 INSTR: {'instruction': 'LD', 'operand': '[0]'}
+  DEBUG:root:TICK:   39 ACC:      2 SP:     -2 IP:      5 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:   44 ACC:      2 SP:     -3 IP:      6 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:   49 ACC:      2 SP:     -3 IP:      7 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK:   52 ACC:      2 SP:     -3 IP:      8 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:   57 ACC:      2 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK:   58 ACC:      2 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:   62 ACC:      2 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:   67 ACC:      2 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:   74 ACC:     72 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:   78 ACC:     72 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK:   80 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:   85 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK:   90 ACC:     72 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:   95 ACC:     72 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK:   97 ACC:     72 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:   99 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  103 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  108 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  113 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK:  115 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK:  117 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  122 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  126 ACC:      2 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  131 ACC:      2 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  138 ACC:     72 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  142 ACC:     72 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  147 ACC:     72 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK:  148 ACC:     72 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  153 ACC:     72 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  157 ACC:      2 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  162 ACC:      2 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  164 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  169 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  174 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  179 ACC:      3 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  183 ACC:      3 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  188 ACC:      3 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK:  191 ACC:      3 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  196 ACC:      3 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK:  198 ACC:      3 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK:  199 ACC:      3 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  203 ACC:      3 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  208 ACC:      3 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  215 ACC:    101 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  219 ACC:    101 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK:  221 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  226 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  231 ACC:    101 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  236 ACC:    101 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK:  238 ACC:    101 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  240 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  244 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  249 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  254 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK:  256 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK:  258 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  263 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  267 ACC:      3 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  272 ACC:      3 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  279 ACC:    101 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  283 ACC:    101 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  288 ACC:    101 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK:  289 ACC:    101 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  294 ACC:    101 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  298 ACC:      3 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  303 ACC:      3 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  305 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  310 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  315 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  320 ACC:      4 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  324 ACC:      4 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  329 ACC:      4 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK:  332 ACC:      4 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  337 ACC:      4 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK:  339 ACC:      4 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK:  340 ACC:      4 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  344 ACC:      4 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  349 ACC:      4 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  356 ACC:    108 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  360 ACC:    108 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK:  362 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  367 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  372 ACC:    108 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  377 ACC:    108 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK:  379 ACC:    108 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  381 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  385 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  390 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  395 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK:  397 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK:  399 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  404 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  408 ACC:      4 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  413 ACC:      4 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  420 ACC:    108 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  424 ACC:    108 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  429 ACC:    108 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK:  430 ACC:    108 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  435 ACC:    108 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  439 ACC:      4 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  444 ACC:      4 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  446 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  451 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  456 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  461 ACC:      5 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  465 ACC:      5 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  470 ACC:      5 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK:  473 ACC:      5 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  478 ACC:      5 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK:  480 ACC:      5 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK:  481 ACC:      5 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  485 ACC:      5 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  490 ACC:      5 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  497 ACC:    108 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  501 ACC:    108 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK:  503 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  508 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  513 ACC:    108 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  518 ACC:    108 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK:  520 ACC:    108 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  522 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  526 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  531 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  536 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK:  538 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK:  540 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  545 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  549 ACC:      5 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  554 ACC:      5 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  561 ACC:    108 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  565 ACC:    108 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  570 ACC:    108 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK:  571 ACC:    108 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  576 ACC:    108 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  580 ACC:      5 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  585 ACC:      5 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  587 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  592 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  597 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  602 ACC:      6 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  606 ACC:      6 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  611 ACC:      6 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK:  614 ACC:      6 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  619 ACC:      6 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK:  621 ACC:      6 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK:  622 ACC:      6 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  626 ACC:      6 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  631 ACC:      6 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  638 ACC:    111 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  642 ACC:    111 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK:  644 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  649 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  654 ACC:    111 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  659 ACC:    111 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK:  661 ACC:    111 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  663 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  667 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  672 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  677 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK:  679 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK:  681 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  686 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  690 ACC:      6 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  695 ACC:      6 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  702 ACC:    111 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  706 ACC:    111 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  711 ACC:    111 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK:  712 ACC:    111 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  717 ACC:    111 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  721 ACC:      6 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  726 ACC:      6 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  728 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  733 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  738 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  743 ACC:      7 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  747 ACC:      7 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  752 ACC:      7 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK:  755 ACC:      7 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  760 ACC:      7 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK:  762 ACC:      7 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK:  763 ACC:      7 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  767 ACC:      7 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  772 ACC:      7 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  779 ACC:     32 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  783 ACC:     32 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK:  785 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  790 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  795 ACC:     32 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  800 ACC:     32 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK:  802 ACC:     32 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  804 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  808 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  813 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  818 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK:  820 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK:  822 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  827 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  831 ACC:      7 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  836 ACC:      7 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  843 ACC:     32 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  847 ACC:     32 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  852 ACC:     32 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK:  853 ACC:     32 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  858 ACC:     32 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  862 ACC:      7 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  867 ACC:      7 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  869 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  874 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  879 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  884 ACC:      8 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  888 ACC:      8 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  893 ACC:      8 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK:  896 ACC:      8 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  901 ACC:      8 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK:  903 ACC:      8 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK:  904 ACC:      8 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  908 ACC:      8 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  913 ACC:      8 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  920 ACC:    119 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  924 ACC:    119 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK:  926 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  931 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  936 ACC:    119 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  941 ACC:    119 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK:  943 ACC:    119 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK:  945 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK:  949 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  954 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  959 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK:  961 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK:  963 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  968 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK:  972 ACC:      8 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK:  977 ACC:      8 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK:  984 ACC:    119 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  988 ACC:    119 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK:  993 ACC:    119 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK:  994 ACC:    119 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK:  999 ACC:    119 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1003 ACC:      8 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1008 ACC:      8 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1010 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1015 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1020 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1025 ACC:      9 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1029 ACC:      9 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1034 ACC:      9 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK: 1037 ACC:      9 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1042 ACC:      9 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK: 1044 ACC:      9 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK: 1045 ACC:      9 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1049 ACC:      9 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1054 ACC:      9 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1061 ACC:    111 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1065 ACC:    111 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK: 1067 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1072 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1077 ACC:    111 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1082 ACC:    111 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK: 1084 ACC:    111 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1086 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1090 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1095 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1100 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK: 1102 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK: 1104 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1109 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1113 ACC:      9 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1118 ACC:      9 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1125 ACC:    111 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1129 ACC:    111 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1134 ACC:    111 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK: 1135 ACC:    111 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1140 ACC:    111 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1144 ACC:      9 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1149 ACC:      9 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1151 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1156 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1161 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1166 ACC:     10 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1170 ACC:     10 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1175 ACC:     10 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK: 1178 ACC:     10 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1183 ACC:     10 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK: 1185 ACC:     10 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK: 1186 ACC:     10 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1190 ACC:     10 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1195 ACC:     10 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1202 ACC:    114 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1206 ACC:    114 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK: 1208 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1213 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1218 ACC:    114 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1223 ACC:    114 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK: 1225 ACC:    114 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1227 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1231 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1236 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1241 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK: 1243 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK: 1245 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1250 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1254 ACC:     10 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1259 ACC:     10 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1266 ACC:    114 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1270 ACC:    114 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1275 ACC:    114 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK: 1276 ACC:    114 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1281 ACC:    114 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1285 ACC:     10 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1290 ACC:     10 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1292 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1297 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1302 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1307 ACC:     11 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1311 ACC:     11 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1316 ACC:     11 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK: 1319 ACC:     11 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1324 ACC:     11 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK: 1326 ACC:     11 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK: 1327 ACC:     11 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1331 ACC:     11 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1336 ACC:     11 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1343 ACC:    108 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1347 ACC:    108 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK: 1349 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1354 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1359 ACC:    108 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1364 ACC:    108 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK: 1366 ACC:    108 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1368 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1372 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1377 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1382 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK: 1384 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK: 1386 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1391 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1395 ACC:     11 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1400 ACC:     11 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1407 ACC:    108 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1411 ACC:    108 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1416 ACC:    108 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK: 1417 ACC:    108 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1422 ACC:    108 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1426 ACC:     11 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1431 ACC:     11 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1433 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1438 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1443 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1448 ACC:     12 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1452 ACC:     12 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1457 ACC:     12 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK: 1460 ACC:     12 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1465 ACC:     12 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK: 1467 ACC:     12 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK: 1468 ACC:     12 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1472 ACC:     12 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1477 ACC:     12 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1484 ACC:    100 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1488 ACC:    100 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK: 1490 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1495 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1500 ACC:    100 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1505 ACC:    100 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK: 1507 ACC:    100 SP:     -4 IP:     21 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1509 ACC:      1 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1513 ACC:      1 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1518 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1523 ACC:      1 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK: 1525 ACC:      1 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK: 1527 ACC:      1 SP:     -3 IP:     27 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1532 ACC:      1 SP:     -2 IP:     28 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1536 ACC:     12 SP:     -2 IP:     29 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1541 ACC:     12 SP:     -3 IP:     30 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1548 ACC:    100 SP:     -3 IP:     31 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1552 ACC:    100 SP:     -3 IP:     32 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1557 ACC:    100 SP:     -3 IP:     33 INSTR: {'instruction': 'OUT'}
+  DEBUG:root:TICK: 1558 ACC:    100 SP:     -3 IP:     34 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1563 ACC:    100 SP:     -2 IP:     35 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1567 ACC:     12 SP:     -2 IP:     36 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1572 ACC:     12 SP:     -3 IP:     37 INSTR: {'instruction': 'LD', 'operand': '1'}
+  DEBUG:root:TICK: 1574 ACC:      1 SP:     -3 IP:     38 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1579 ACC:      1 SP:     -4 IP:     39 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1584 ACC:      1 SP:     -3 IP:     40 INSTR: {'instruction': 'ADD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1589 ACC:     13 SP:     -3 IP:     41 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1593 ACC:     13 SP:     -3 IP:     42 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1598 ACC:     13 SP:     -3 IP:     43 INSTR: {'instruction': 'ST', 'operand': '1'}
+  DEBUG:root:TICK: 1601 ACC:     13 SP:     -3 IP:     44 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1606 ACC:     13 SP:     -2 IP:     45 INSTR: {'instruction': 'JMP', 'V': 9}
+  DEBUG:root:TICK: 1608 ACC:     13 SP:     -2 IP:      9 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK: 1609 ACC:     13 SP:     -2 IP:     10 INSTR: {'instruction': 'LD', 'operand': '[1]'}
+  DEBUG:root:TICK: 1613 ACC:     13 SP:     -2 IP:     11 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1618 ACC:     13 SP:     -3 IP:     12 INSTR: {'instruction': 'LD', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1625 ACC:      0 SP:     -3 IP:     13 INSTR: {'instruction': 'ST', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1629 ACC:      0 SP:     -3 IP:     14 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK: 1631 ACC:      0 SP:     -3 IP:     15 INSTR: {'instruction': 'PUSH'}
+  DEBUG:root:TICK: 1636 ACC:      0 SP:     -4 IP:     16 INSTR: {'instruction': 'LD', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1641 ACC:      0 SP:     -4 IP:     17 INSTR: {'instruction': 'CMP', 'operand': '[SP+0]'}
+  DEBUG:root:TICK: 1646 ACC:      0 SP:     -4 IP:     18 INSTR: {'instruction': 'JNE', 'V': 21}
+  DEBUG:root:TICK: 1648 ACC:      0 SP:     -4 IP:     19 INSTR: {'instruction': 'LD', 'operand': '0'}
+  DEBUG:root:TICK: 1650 ACC:      0 SP:     -4 IP:     20 INSTR: {'instruction': 'JMP', 'V': 22}
+  DEBUG:root:TICK: 1652 ACC:      0 SP:     -4 IP:     22 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1656 ACC:      0 SP:     -4 IP:     23 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1661 ACC:      0 SP:     -3 IP:     24 INSTR: {'instruction': 'LD', 'operand': 'SP+0'}
+  DEBUG:root:TICK: 1666 ACC:      0 SP:     -3 IP:     25 INSTR: {'instruction': 'CMP', 'operand': '0'}
+  DEBUG:root:TICK: 1668 ACC:      0 SP:     -3 IP:     26 INSTR: {'instruction': 'JE', 'V': 46}
+  DEBUG:root:TICK: 1670 ACC:      0 SP:     -3 IP:     46 INSTR: {'instruction': 'NOP'}
+  DEBUG:root:TICK: 1671 ACC:      0 SP:     -3 IP:     47 INSTR: {'instruction': 'POP'}
+  DEBUG:root:TICK: 1676 ACC:      0 SP:     -2 IP:     48 INSTR: {'instruction': 'ST', 'operand': 'SP+1'}
+  DEBUG:root:TICK: 1680 ACC:      0 SP:     -2 IP:     49 INSTR: {'instruction': 'RET'}
+  DEBUG:root:TICK: 1685 ACC:      0 SP:     -1 IP:     56 INSTR: {'instruction': 'HALT'}
+  INFO:root:output_buffer: 'Hello world'
 out_stdout: |
   TODO
