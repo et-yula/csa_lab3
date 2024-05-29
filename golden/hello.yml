@@ -433,5 +433,8 @@ out_dbg: |-
   DEBUG:root:TICK: 1680 ACC:      0 SP:     -2 IP:     49 INSTR: {'instruction': 'RET'}
   DEBUG:root:TICK: 1685 ACC:      0 SP:     -1 IP:     56 INSTR: {'instruction': 'HALT'}
   INFO:root:output_buffer: 'Hello world'
+  
 out_stdout: |
-  TODO
+  Hello world
+  instr_counter:  421 ticks: 1686
+  

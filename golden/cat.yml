@@ -113,5 +113,8 @@ out_dbg: |-
   DEBUG:root:TICK:  369 ACC:      0 SP:     -1 IP:     23 INSTR: {'instruction': 'NOP'}
   DEBUG:root:TICK:  370 ACC:      0 SP:     -1 IP:     24 INSTR: {'instruction': 'HALT'}
   INFO:root:output_buffer: 'Alice'
+  
 out_stdout: |
-  TODO
+  Alice
+  instr_counter:  102 ticks: 371
+  
