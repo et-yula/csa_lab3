@@ -1,0 +1,14 @@
+in_source: |-
+  "cat.lsp"
+  
+  (defvar in (IN))
+  (while in
+      (OUT in)
+      (setq in (IN))
+  )
+in_stdin: |-
+  Alice
+out_dbg: |-
+  TODO
+out_stdout: |
+  TODO

@@ -1,0 +1,45 @@
+in_source: |-
+  "prob1.lsp"
+  
+  (defun print (string)
+      (defvar pointer string)
+      (while (!= (getv pointer) 0)
+          (OUT (getv pointer))
+          (setq pointer (+ pointer 1))
+      )
+  )
+  (defun printint (int)
+      (defvar num (compile-malloc 20))
+      (setq num (+ num 18))
+      (while (!= int 0)
+          (setv num (+ 48 (% int 10)))
+          (setq num (- num 1))
+          (setv num 0)
+          (setq int (/ int 10))
+      )
+      (print (+ num 1))
+  )
+  
+  (defun prob1 (n)
+      (defvar sum 0)
+      (setq n (- n 1))
+      (while (!= n 1)
+          (defvar isnum 0)
+          (if (= (% n 5) 0) (setq isnum n))
+          (if (= (% n 3) 0) (setq isnum n))
+          (setq sum (+ sum isnum))
+          (setq n (- n 1))
+      )
+      sum
+  )
+  
+  (printint (prob1 10))
+in_stdin: |-
+  -
+out_dbg: |-
+  TODO
+out_stdout: |
+  TODO
+
+
+

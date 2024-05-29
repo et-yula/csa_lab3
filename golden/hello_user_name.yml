@@ -1,0 +1,32 @@
+in_source: |-
+  "hello_user_name.lsp"
+  
+  (defun print (string)
+      (defvar pointer string)
+      (while (!= (getv pointer) 0)
+          (OUT (getv pointer))
+          (setq pointer (+ pointer 1))
+      )
+  )
+  
+  (defun read (pntr)
+      (defvar pointer pntr)
+      (defvar in (IN))
+      (while (!= in 0) "Waiting for the carry symbol"
+          (setv pointer in)
+          (setq pointer (+ pointer 1))
+          (setq in (IN))
+      )
+  )
+  
+  (print "What is your name?
+  ")
+  (defvar name (compile-malloc 20))
+  (read name)
+  (print "Hello, ") (print name) (print "!")
+in_stdin: |-
+  Alice
+out_dbg: |-
+  TODO
+out_stdout: |
+  TODO

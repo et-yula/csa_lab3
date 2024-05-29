@@ -1,0 +1,15 @@
+in_source: |-
+  "hello.lsp"
+  
+  (defun print (string)
+      (defvar pointer string)
+      (while (!= (getv pointer) 0)
+          (OUT (getv pointer))
+          (setq pointer (+ pointer 1))))
+  (print "Hello world")
+in_stdin: |-
+  -
+out_dbg: |-
+  TODO
+out_stdout: |
+  TODO
