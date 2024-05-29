@@ -465,9 +465,7 @@ class ControlUnit:
             self.programm[self.IP],
         )
 
-def simulation(code, input_tokens, data_memory_size, limit, debug_file = None):
-    if debug_file is not None:
-        logging.basicConfig(filename=debug_file, filemode="w", format="%(levelname)s   %(name): %(message)s")
+def simulation(code, input_tokens, data_memory_size, limit):
     mm = MemoryManager(data_memory_size)
     if len(code)>0 and isinstance(code[0], list):
         for i in range(len(code[0])):
@@ -493,7 +491,7 @@ def simulation(code, input_tokens, data_memory_size, limit, debug_file = None):
     logging.info("output_buffer: %s", repr("".join(data_path.output_buffer)))
     return "".join(data_path.output_buffer), instr_counter, control_unit.current_tick()
 
-def machine(code_file, input_file):
+def machine(code_file, input_file, debug_file = None):
     def read_code(file_name):
         try:
             import json
@@ -504,6 +502,8 @@ def machine(code_file, input_file):
         except:
             print("Reading code error")
             exit(1)
+    if debug_file is not None:
+        logging.basicConfig(filename=debug_file, filemode="w", format="%(levelname)s   %(name): %(message)s")
     code = read_code(code_file)
     input_token = []
     with open(input_file, encoding="utf-8") as file:
